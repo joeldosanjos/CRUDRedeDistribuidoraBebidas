@@ -1,0 +1,99 @@
+﻿@model RedeBebidas.Models.Cliente
+@{
+    ViewData["Title"] = "Detalhes";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<div class="container p-3 my-3 border">
+    <h1>Detalhes do cliente</h1>
+    <hr />
+    <dl class="row">
+        <dt class="col-sm-3">
+            @Html.DisplayNameFor(model => model.Nome)
+        </dt>
+        <dd class="col-sm-9">
+            @Html.DisplayFor(model => model.Nome)
+        </dd>
+
+        <dt class="col-sm-3">
+            E-mail
+        </dt>
+        <dd class="col-sm-9">
+            @Html.DisplayFor(model => model.Email)
+        </dd>
+
+        <dt class="col-sm-3">
+            CPF
+        </dt>
+        <dd class="col-sm-9">
+            @Html.DisplayFor(model => model.Cpf)
+        </dd>
+
+        <dt class="col-sm-3">
+            Tipo de telefone
+        </dt>
+        <dd class="col-sm-9">
+            @Html.DisplayFor(model => model.TelefoneTipo)
+        </dd>
+
+        <dt class="col-sm-3">
+            Número de telefone
+        </dt>
+        <dd class="col-sm-9">
+            @Html.DisplayFor(model => model.TelefoneNumero)
+        </dd>
+
+        <dt class="col-sm-3">
+            Tipo de endereço
+        </dt>
+        <dd class="col-sm-9">
+            @Html.DisplayFor(model => model.EnderecoTipo)
+        </dd>
+
+        <dt class="col-sm-3">
+            CEP
+        </dt>
+        <dd class="col-sm-9">
+            @Html.DisplayFor(model => model.Cep)
+        </dd>
+
+        <dt class="col-sm-3">
+            @Html.DisplayNameFor(model => model.Estado)
+        </dt>
+        <dd class="col-sm-9">
+            @Html.DisplayFor(model => model.Estado)
+        </dd>
+
+        <dt class="col-sm-3">
+            @Html.DisplayNameFor(model => model.Estado)
+        </dt>
+        <dd class="col-sm-9">
+            @Html.DisplayFor(model => model.Cidade)
+        </dd>
+
+        <dt class="col-sm-3">
+            @Html.DisplayNameFor(model => model.Bairro)
+        </dt>
+        <dd class="col-sm-9">
+            @Html.DisplayFor(model => model.Bairro)
+        </dd>
+
+        <dt class="col-sm-3">
+            @Html.DisplayNameFor(model => model.Logradouro)
+        </dt>
+        <dd class="col-sm-9">
+            @Html.DisplayFor(model => model.Logradouro)
+        </dd>
+
+        <dt class="col-sm-3">
+            Número de endereço
+        </dt>
+        <dd class="col-sm-9">
+            @Html.DisplayFor(model => model.EnderecoNumero)
+        </dd>
+    </dl>
+    <div>
+        <a class="btn btn-primary" asp-action="AddOrEdit" asp-route-clienteId="@Model.ClienteId">Editar</a>
+        <a class="btn btn-danger" asp-action="Index">Voltar</a>
+    </div>
+</div>

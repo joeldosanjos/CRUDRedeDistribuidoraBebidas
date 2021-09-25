@@ -1,0 +1,94 @@
+﻿@model RedeBebidas.Models.Cliente
+
+@{
+    ViewData["Title"] = "Deletar";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Deletar cliente</h2>
+
+<h3>Você tem certeza que quer deletar?</h3>
+<div class="container p-3 my-3 border">
+    <hr />
+    <dl class="row">
+        <dt class="col-sm-3">
+            @Html.DisplayNameFor(model => model.Nome)
+        </dt>
+        <dd class="col-sm-9">
+            @Html.DisplayFor(model => model.Nome)
+        </dd>
+        <dt class="col-sm-3">
+            @Html.DisplayNameFor(model => model.Email)
+        </dt>
+        <dd class="col-sm-9">
+            @Html.DisplayFor(model => model.Email)
+        </dd>
+        <dt class="col-sm-3">
+            @Html.DisplayNameFor(model => model.Cpf)
+        </dt>
+        <dd class="col-sm-9">
+            @Html.DisplayFor(model => model.Cpf)
+        </dd>
+        <dt class="col-sm-3">
+            @Html.DisplayNameFor(model => model.TelefoneTipo)
+        </dt>
+        <dd class="col-sm-9">
+            @Html.DisplayFor(model => model.TelefoneTipo)
+        </dd>
+        <dt class="col-sm-3">
+            @Html.DisplayNameFor(model => model.TelefoneNumero)
+        </dt>
+        <dd class="col-sm-9">
+            @Html.DisplayFor(model => model.TelefoneNumero)
+        </dd>
+        <dt class="col-sm-3">
+            @Html.DisplayNameFor(model => model.EnderecoTipo)
+        </dt>
+        <dd class="col-sm-9">
+            @Html.DisplayFor(model => model.EnderecoTipo)
+        </dd>
+        <dt class="col-sm-3">
+            @Html.DisplayNameFor(model => model.Cep)
+        </dt>
+        <dd class="col-sm-9">
+            @Html.DisplayFor(model => model.Cep)
+        </dd>
+        <dt class="col-sm-3">
+            @Html.DisplayNameFor(model => model.Estado)
+        </dt>
+        <dd class="col-sm-9">
+            @Html.DisplayFor(model => model.Estado)
+        </dd>
+        <dt class="col-sm-3">
+            @Html.DisplayNameFor(model => model.Cidade)
+        </dt>
+        <dd class="col-sm-9">
+            @Html.DisplayFor(model => model.Cidade)
+        </dd>
+        <dt class="col-sm-3">
+            @Html.DisplayNameFor(model => model.Bairro)
+        </dt>
+        <dd class="col-sm-9">
+            @Html.DisplayFor(model => model.Bairro)
+        </dd>
+        <dt class="col-sm-3">
+            @Html.DisplayNameFor(model => model.Logradouro)
+        </dt>
+        <dd class="col-sm-9">
+            @Html.DisplayFor(model => model.Logradouro)
+        </dd>
+        <dt class="col-sm-3">
+            @Html.DisplayNameFor(model => model.EnderecoNumero)
+        </dt>
+        <dd class="col-sm-9">
+            @Html.DisplayFor(model => model.EnderecoNumero)
+        </dd>
+    </dl>
+
+    <form asp-action="Delete">
+        <input type="hidden" asp-for="ClienteId" />
+        <input class="btn btn-primary" type="submit" value="Sim" />
+        <a class="btn btn-danger" asp-action="Index">Não</a>
+    </form>
+
+</div>

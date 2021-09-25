@@ -1,0 +1,77 @@
+﻿@model X.PagedList.IPagedList<RedeBebidas.Models.Cliente>
+@using X.PagedList.Mvc.Core;
+
+@{
+    ViewData["Title"] = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h1>Index</h1>
+
+<p style="text-align:right;margin-right:20px;">
+    <a class="btn btn-outline-primary" asp-action="AddOrEdit">Adicionar cliente</a>
+</p>
+<div class="table-responsive">
+    <table class="table">
+        <thead>
+            <tr>
+                <th>
+                    Nome
+                </th>
+                <th>
+                    Tipo de telefone
+                </th>
+                <th>
+                    Número de telefone
+                </th>
+                <th>
+                    Tipo de endereço
+                </th>
+                <th>
+                    Cidade
+                </th>
+                <th>Editar cliente</th>
+                <th>Detalhes do cliente</th>
+                <th>Deletar cliente</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var item in Model)
+            {
+                <tr>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Nome)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.TelefoneTipo)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.TelefoneNumero)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.EnderecoTipo)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Cidade)
+                    </td>
+                    <td class="text-center">
+                        <a asp-action="AddOrEdit" class="btn btn-outline-primary" asp-route-clienteId="@item.ClienteId">Editar</a>
+                    </td>
+                    <td class="text-center">
+                        <a asp-action="Details" class="btn btn-outline-info" asp-route-clienteId="@item.ClienteId">Detalhes</a>
+                    </td>
+                    <td class="text-center">
+                        <a asp-action="Delete" class="btn btn-outline-danger" asp-route-clienteId="@item.ClienteId">Deletar</a>
+                    </td>
+                </tr>
+            }
+        </tbody>
+    </table>
+</div>
+
+@Html.PagedListPager(Model, pagina => Url.Action("Index", new { pagina }),
+new X.PagedList.Web.Common.PagedListRenderOptions
+{
+    LiElementClasses = new string[] { "page-item" },
+    PageClasses = new string[] { "page-link" }
+})
