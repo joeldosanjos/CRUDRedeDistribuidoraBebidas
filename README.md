@@ -1,5 +1,5 @@
 # CRUDRedeDistribuidoraBebidas
-### CRUD básico feito em ASP.NET Core 5.0 e SQL Server para uma rede distribuidora de bebidas.
+### CRUD First básico feito em ASP.NET Core 5.0 e SQL Server para uma rede distribuidora de bebidas (Database First). 
 
 Para executar o sistema, execute os três scripts que estão na pasta "Banco de dados" na seguinte ordem:
 1. Criar banco de dados
